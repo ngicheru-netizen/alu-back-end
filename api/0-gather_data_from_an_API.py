@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Gather data from a REST API about an employee's TODO list."""
+
 import requests
 import sys
 
@@ -17,8 +19,9 @@ for todo in todos:
     if todo["completed"]:
         DONE_TASKS.append(todo)
 
-
 NUMBER_OF_DONE_TASKS = len(DONE_TASKS)
+
+
 print(
     "Employee",
     EMPLOYEE_NAME,
