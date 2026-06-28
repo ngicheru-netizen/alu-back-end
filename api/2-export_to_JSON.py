@@ -30,11 +30,9 @@ if __name__ == "__main__":
     for todo in todos:
         tasks.append(
             {
-                "USER_ID": employee_ID,
                 "task": todo["title"],
                 "completed": todo["completed"],
                 "USERNAME": EMPLOYEE_USERNAME,
-                "TASK_TITLE": todo["title"],
             }
         )
     data = {employee_ID: tasks}
