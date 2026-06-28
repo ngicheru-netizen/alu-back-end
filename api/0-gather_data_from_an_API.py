@@ -6,8 +6,9 @@ import sys
 
 if __name__ == "__main__":
     employee_ID = sys.argv[1]
-    user_url = f"https://jsonplaceholder.typicode.com/users/{employee_ID}"
-    todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_ID}/todos"
+    base = f"https://jsonplaceholder.typicode.com/users/{employee_ID}"
+    user_url = base
+    todos_url = f"{base}/todos"
 
     user = requests.get(user_url).json()
     todos = requests.get(todos_url).json()
@@ -25,9 +26,7 @@ if __name__ == "__main__":
         "Employee",
         EMPLOYEE_NAME,
         "is done with tasks",
-        f"({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS})",
-        "/",
-        TOTAL_NUMBER_OF_TASKS,
+        f"({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}): ",
     )
 
     for todo in DONE_TASKS:
