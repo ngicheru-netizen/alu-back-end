@@ -31,7 +31,4 @@ if __name__ == "__main__":
     )
 
     for todo in DONE_TASKS:
-        print(f"\t {todo["title"]}")
-
-
-#     pass
+        print(f"\t {todo['title']}")
