@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Gather data from a REST API about an employee's TODO list and turn data to CSV"""
+"""Gather data from a REST API about an
+employee's TODO list and turn data to CSV"""
 
 import csv
 import requests
