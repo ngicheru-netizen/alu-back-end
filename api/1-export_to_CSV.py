@@ -23,21 +23,20 @@ if __name__ == "__main__":
 
     NUMBER_OF_DONE_TASKS = len(DONE_TASKS)
 
+    data_list = []
 
-data_list = []
+    for todo in todos:
+        data_list.append(
+            {
+                "USER_ID": employee_ID,
+                "USERNAME": EMPLOYEE_NAME,
+                "TASK_COMPLETED_STATUS": todo["completed"],
+                "TASK_TITLE": todo["title"],
+            }
+        )
+    fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
 
-for todo in todos:
-    data_list.append(
-        {
-            "USER_ID": employee_ID,
-            "USERNAME": EMPLOYEE_NAME,
-            "TASK_COMPLETED_STATUS": todo["completed"],
-            "TASK_TITLE": todo["title"],
-        }
-    )
-fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
-
-with open(f"{employee_ID}.csv", "w", newline="", encoding="utf-8") as file:
-    writer = csv.DictWriter(file, fieldnames=fieldnames)
-    writer.writeheader()
-    writer.writerows(data_list)
+    with open(f"{employee_ID}.csv", "w", newline="", encoding="utf-8") as file:
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(data_list)
