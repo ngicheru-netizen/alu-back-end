@@ -7,9 +7,9 @@ import requests
 import sys
 
 if __name__ == "__main__":
-
-    all_users = requests.get("https://jsonplaceholder.typicode.com/users/").json()
-    all_todos = requests.get("https://jsonplaceholder.typicode.com/todos/").json()
+    base = f"https://jsonplaceholder.typicode.com"
+    all_users = requests.get(f"{base}/users/").json()
+    all_todos = requests.get(f"{base}/todos/").json()
 
     usernames = {}
     for user in all_users:
