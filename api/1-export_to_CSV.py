@@ -39,5 +39,4 @@ if __name__ == "__main__":
 
     with open(f"{employee_ID}.csv", "w", newline="", encoding="utf-8") as file:
         writer = csv.DictWriter(file, fieldnames=fieldnames)
-        writer.writeheader()
         writer.writerows(data_list)
