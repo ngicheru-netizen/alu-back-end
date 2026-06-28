@@ -30,7 +30,7 @@ if __name__ == "__main__":
         data_list.append(
             {
                 "USER_ID": employee_ID,
-                "USERNAME": EMPLOYEE_NAME,
+                "USERNAME": EMPLOYEE_NAME.split()[0],
                 "TASK_COMPLETED_STATUS": todo["completed"],
                 "TASK_TITLE": todo["title"],
             }
